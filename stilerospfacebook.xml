@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="socialpromoter" method="upgrade">
+	<name>SocialPromoter Facebook</name>
+	<author>Daniel Eliasson (daniel at stilero.co)></author>
+	<creationDate>2013-dec-26</creationDate>
+	<copyright>Copyright (c) 2013-dec-26 Stilero Webdesign (http://www.stilero.com). All rights reserved.</copyright>
+	<authorEmail>joomla@stilero.com</authorEmail>
+	<authorUrl>www.stilero.com</authorUrl>
+	<version>1.0</version>
+	<license>GPLv2</license>
+	<description>Description</description>
+        <!--
+	<install>
+            <sql>
+                <file driver="mysql" charset="utf8">stilerospfacebooksql/stilerospfacebook_install.sql</file>
+            </sql>
+	</install>
+	<uninstall>
+            <sql>
+                <file driver="mysql" charset="utf8">stilerospfacebooksql/stilerospfacebook_uninstall.sql</file>
+            </sql>
+	</uninstall>
+        -->
+        <!-- Site Main File Copy Section -->
+	<!-- Note the folder attribute: This attribute describes the folder
+		to copy FROM in the package to install therefore files copied
+		in this section are copied from /site/ in the package -->
+	<files>
+		<filename plugin="stilerospfacebook">stilerospfacebook.php</filename>
+	</files>
+        <!--
+        <media destination="stilerospfacebook">
+            <folder>assets/js</folder>
+            <folder>assets/images</folder>
+            <folder>assets/css</folder>
+        </media>
+	<languages folder="language">
+            <language tag="en-GB">site/language/en-GB.com_stilerospfacebook.ini</language>
+            <language tag="sv-SE">site/language/sv-SE.com_stilerospfacebook.ini</language>
+            <language tag="en-GB">site/language/en-GB.com_stilerospfacebook.sys.ini</language>
+            <language tag="sv-SE">site/language/sv-SE.com_stilerospfacebook.sys.ini</language>
+        </languages>
+        -->
+        <config>
+            <fields name="params">
+                    <fieldset name="settings" label="PLG_CONTENT_STILEROSPFACEBOOK_SETTINGS">
+                            <field name="custom_field" type="customfieldname" default="" label="PLG_CONTENT_STILEROSPFACEBOOK_PARAMNAME" description="PLG_CONTENT_STILEROSPFACEBOOK_PARAMNAME_DESC"/>
+                            <field name="param_name" type="text"  default="" label="PLG_CONTENT_STILEROSPFACEBOOK_PARAMNAME" description="PLG_CONTENT_STILEROSPFACEBOOK_PARAMNAME_DESC"/>
+                            <field name="param_name2" type="radio" default="1" label="PLG_CONTENT_STILEROSPFACEBOOK_PARAMNAME2" description="PLG_CONTENT_STILEROSPFACEBOOK_PARAMNAME2_DESC">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                            </field>
+                            <field type="spacer" default="PLG_CONTENT_STILEROSPFACEBOOK_SPACER"/>
+                    </fieldset>
+                    <fieldset name="other" label="PLG_CONTENT_STILEROSPFACEBOOK_FIELDSET">
+                            <field name="param_name" type="text"  default="" label="PLG_CONTENT_STILEROSPFACEBOOK_PARAMNAME" description="PLG_CONTENT_STILEROSPFACEBOOK_PARAMNAME_DESC"/>
+                            <field name="param_name2" type="radio" default="1" label="PLG_CONTENT_STILEROSPFACEBOOK_PARAMNAME2" description="PLG_CONTENT_STILEROSPFACEBOOK_PARAMNAME2_DESC">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                            </field>
+                            <field type="spacer" default="PLG_CONTENT_STILEROSPFACEBOOK_SPACER"/>
+                    </fieldset>
+            </fields>
+        </config>
+</extension>
