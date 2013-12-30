@@ -12,8 +12,13 @@
 // no direct access
 defined('_JEXEC') or die ('Restricted access');
 if(!defined('DS')){
-    define('DS',DIRECTORY_SEPARATOR);
+    define('DS', DIRECTORY_SEPARATOR);
 }
+define('PATH_LIBRARY', dirname(__FILE__).DS.'library'.DS);
+JLoader::discover('StileroSPFB', PATH_LIBRARY, true, true);
+JLoader::discover('StileroSPFBOauth', PATH_LIBRARY.'oauth', true, true);
+JLoader::discover('StileroSPFBEndpoint', PATH_LIBRARY.'endpoints', true, true);
+//JLoader::discover('StileroSPFBOauth', PATH_LIBRARY.'fboauth', true, true);
 JLoader::register('SocialpromoterImporter', JPATH_ADMINISTRATOR.DS.'components'.DS.'com_socialpromoter'.DS.'helpers'.DS.'importer.php');
 JLoader::register('SocialpromoterPosttype', JPATH_ADMINISTRATOR.DS.'components'.DS.'com_socialpromoter'.DS.'library'.DS.'posttype.php');
 //jimport('joomla.plugin.plugin');
@@ -37,6 +42,10 @@ class plgSystemStilerospfacebook extends JPlugin {
             SocialpromoterPosttype::LINK, 
             SocialpromoterPosttype::IMAGE
         );
+    }
+    
+    public function postImage($url, $title='', $description='', $tags=''){
+        return true;
     }
     
     /**
