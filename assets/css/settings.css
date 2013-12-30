@@ -7,11 +7,11 @@
 */
 
 .ajaxloader { 
-    background:#ffffff url('../../../media/plg_autofbook/images/ajax-loader.gif') no-repeat right top;
+    background:#ffffff url('../../../stilerospfacebook/assets/images/ajax-loader.gif') no-repeat right top;
     padding-right:20px;
 }
 .ajaxloader-blue { 
-    background: url('../../../media/plg_autofbook/images/ajax-loader-blue.gif') no-repeat right top;
+    background: url('../../../stilerospfacebook/assets/images/ajax-loader-blue.gif') no-repeat right top;
     width:16px;
     height:11px;
     padding-right:23px;
@@ -26,10 +26,10 @@
     color:#fff;
 }
 .fbdisconnect{
-    background:#ffffff url('../../../media/plg_autofbook/images/fb-disconnect-btn.png') no-repeat right top;
+    background:#ffffff url('../../../stilerospfacebook/assets/images/fb-disconnect-btn.png') no-repeat right top;
 }
 .fbconnect{
-    background:#ffffff url('../../../media/plg_autofbook/images/fb-connect-btn.png') no-repeat right top;
+    background:#ffffff url('../../../stilerospfacebook/assets/images/fb-connect-btn.png') no-repeat right top;
 }
 .readonly .fbconnect, .readonly .fbdisconnect{
     color:#fff;

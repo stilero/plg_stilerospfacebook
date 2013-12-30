@@ -17,10 +17,10 @@ defined('_JEXEC') or die('Restricted access');
  */
 class fbAdmin{
     
-    const ASSETS_PATH = 'media/plg_stilerospfacebook/assets/';
-    const IMAGE_PATH = 'media/plg_stilerospfacebook/assets/images/';
-    const JS_PATH = 'media/plg_stilerospfacebook/assets/js/';
-    const SETTINGS_CSS = 'media/plg_stilerospfacebook/assets/css/settings.css';
+    const ASSETS_PATH = 'media/stilerospfacebook/assets/';
+    const IMAGE_PATH = 'media/stilerospfacebook/assets/images/';
+    const JS_PATH = 'media/stilerospfacebook/assets/js/';
+    const SETTINGS_CSS = 'media/stilerospfacebook/assets/css/settings.css';
     const FB_ADMIN_JS = 'fbadmin.js';
     const ELEMENTS_JS = 'j16Elements.js';
     

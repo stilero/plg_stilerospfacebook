@@ -20,15 +20,15 @@
         <folder>library</folder>
     </files>
     <languages folder="language">
-        <language tag="en-GB">en-GB.plg_system_stilerospfacebook.php.ini</language>
-        <language tag="en-GB">en-GB.plg_system_stilerospfacebook.php.sys.ini</language>
-        <language tag="sv-SE">sv-SE.plg_system_stilerospfacebook.php.ini</language>
-        <language tag="fr-FR">fr-FR.plg_system_stilerospfacebook.php.ini</language>
+        <language tag="en-GB">en-GB.plg_socialpromoter_stilerospfacebook.ini</language>
+        <language tag="en-GB">en-GB.plg_socialpromoter_stilerospfacebook.sys.ini</language>
+        <language tag="sv-SE">sv-SE.plg_socialpromoter_stilerospfacebook.ini</language>
+        <language tag="fr-FR">fr-FR.plg_socialpromoter_stilerospfacebook.ini</language>
     </languages>
     <!-- Standard plugin parameters for Joomla! 1.6+ -->
     <config>
         <fields name="params">
-            <fieldset name="advanced" label="PLG_SYSTEM_STILEROSPFACEBOOK_FBSETTINGS" addfieldpath="/plugins/socialpromoter/stilerospfacebook/autofbook/elements">
+            <fieldset name="advanced" label="PLG_SYSTEM_STILEROSPFACEBOOK_FBSETTINGS" addfieldpath="/plugins/socialpromoter/stilerospfacebook/elements">
                 <field name="register" type="register" label="" />
                 <field name="fb_app_id" type="text" required="true" default="" label="PLG_SYSTEM_STILEROSPFACEBOOK_APPID" description="PLG_SYSTEM_STILEROSPFACEBOOK_APPID_DESC"/>
                 <field name="fb_app_secret" type="password" required="true" default="" label="PLG_SYSTEM_STILEROSPFACEBOOK_APPSECRET" description="PLG_SYSTEM_STILEROSPFACEBOOK_APPSECRET_DESC"/>
@@ -45,11 +45,11 @@
     </config>
     <administration>
         <languages folder="language">
-            <language tag="en-GB">en-GB.plg_system_stilerospfacebook.php.ini</language>
-            <language tag="en-GB">en-GB.plg_system_stilerospfacebook.php.sys.ini</language>
-            <language tag="sv-SE">sv-SE.plg_system_stilerospfacebook.php.sys.ini</language>
-            <language tag="sv-SE">sv-SE.plg_system_stilerospfacebook.php.ini</language>
-            <language tag="fr-FR">fr-FR.plg_system_stilerospfacebook.php.ini</language>
+            <language tag="en-GB">en-GB.plg_socialpromoter_stilerospfacebook.ini</language>
+            <language tag="en-GB">en-GB.plg_socialpromoter_stilerospfacebook.sys.ini</language>
+            <language tag="sv-SE">sv-SE.plg_socialpromoter_stilerospfacebook.sys.ini</language>
+            <language tag="sv-SE">sv-SE.plg_socialpromoter_stilerospfacebook.ini</language>
+            <language tag="fr-FR">fr-FR.plg_socialpromoter_stilerospfacebook.ini</language>
         </languages>
     </administration>
 </extension>

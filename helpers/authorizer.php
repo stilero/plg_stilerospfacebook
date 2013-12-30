@@ -13,8 +13,8 @@ define('_JEXEC', 1);
 if(!defined('DS')){
     define('DS', DIRECTORY_SEPARATOR);
 }
-define('PATH_FBLIBRARY_FBOAUTH', '..'.DS.'..'.DS.'library'.DS.'fblibrary'.DS.'fboauth'.DS);
-define('PATH_FBLIBRARY_OAUTH', '..'.DS.'..'.DS.'library'.DS.'fblibrary'.DS.'oauth'.DS);
+define('PATH_FBLIBRARY_FBOAUTH', '..'.DS.'library'.DS.'fblibrary'.DS.'fboauth'.DS);
+define('PATH_FBLIBRARY_OAUTH', '..'.DS.'library'.DS.'fblibrary'.DS.'oauth'.DS);
 require_once PATH_FBLIBRARY_OAUTH.'communicator.php';
 require_once PATH_FBLIBRARY_OAUTH.'client.php';
 require_once PATH_FBLIBRARY_FBOAUTH.'accesstoken.php';
