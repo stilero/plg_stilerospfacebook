@@ -28,6 +28,9 @@
     <!-- Standard plugin parameters for Joomla! 1.6+ -->
     <config>
         <fields name="params">
+            <fieldset name="basic" label="PLG_SYSTEM_STILEROSPFACEBOOK_SETTINGS">
+                <field name="desc_suffix" type="text" required="false" default="" label="PLG_SYSTEM_STILEROSPFACEBOOK_DESC_SUFFIX" description="PLG_SYSTEM_STILEROSPFACEBOOK_DESC_SUFFIX_DESC"/>
+            </fieldset>
             <fieldset name="advanced" label="PLG_SYSTEM_STILEROSPFACEBOOK_FBSETTINGS" addfieldpath="/plugins/socialpromoter/stilerospfacebook/elements">
                 <field name="register" type="register" label="" />
                 <field name="fb_app_id" type="text" required="true" default="" label="PLG_SYSTEM_STILEROSPFACEBOOK_APPID" description="PLG_SYSTEM_STILEROSPFACEBOOK_APPID_DESC"/>

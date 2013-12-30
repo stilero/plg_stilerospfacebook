@@ -38,6 +38,7 @@ class plgSocialpromoterStilerospfacebook extends JPlugin {
     protected $_appSecret;
     protected $_authToken;
     protected $_fbpageAuthToken;
+    protected $_desc_suffix;
     
     const SP_NAME = 'Facebook Plugin';
     const SP_DESCRIPTION = 'Posts links and photos to Facebook';
@@ -67,6 +68,7 @@ class plgSocialpromoterStilerospfacebook extends JPlugin {
         $this->_appId = $this->params->def('fb_app_id');
         $this->_appSecret = $this->params->def('fb_app_secret');
         $this->_authToken = $this->params->def('auth_token');
+        $this->_desc_suffix = $this->params->def('desc_suffix');
     }
     
     /**
@@ -124,7 +126,7 @@ class plgSocialpromoterStilerospfacebook extends JPlugin {
         }else{
             $this->Facebook->Photos->setUserId('me');
         }
-        $caption = $description.' '.$tags;
+        $caption = $description.$this->_desc_suffix.' '.$tags;
         $response = $this->Facebook->Photos->publishFromUrl($url, $caption);
         return $this->wrapUp($response);
     }
