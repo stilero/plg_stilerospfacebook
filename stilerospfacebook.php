@@ -95,7 +95,7 @@ class plgSocialpromoterStilerospfacebook extends JPlugin {
     protected function wrapUp($response){
         $postResponse = StileroSPFBOauthResponse::handle($response);
         if(isset($postResponse->id)){
-            return true;
+            return $postResponse->id;
         }else if($postResponse == null){
             return false;
         }else{
@@ -115,19 +115,26 @@ class plgSocialpromoterStilerospfacebook extends JPlugin {
     
     public function postImage($url, $title='', $description='', $tags=''){
         $redirectUri = JURI::root();
-        $this->Facebook = new StileroSPFBFacebook($this->_appId, $this->_appSecret, $redirectUri);
-        $this->Facebook->setAccessTokenFromToken($this->_authToken);
-        $this->Facebook->init();
-        $this->isPersonalPost();
+        $this->Facebook = new StileroSPFBFacebook($this->_appId, $this->_appSecret, $redirectUri, $this->_authToken);
+        //$this->Facebook->setAccessTokenFromToken($this->_authToken);
+        //$this->Facebook->init();
+        //$this->isPersonalPost();
+//        if($this->pageId != ''){
+//            if(!$this->isPersonalPost()){
+//                $this->initFBPageCall();
+//            }
+//        }else{
+//            $this->Facebook->Photos->setUserId('me');
+//        }
         if($this->pageId != ''){
-            if(!$this->isPersonalPost()){
-                $this->initFBPageCall();
-            }
-        }else{
-            $this->Facebook->Photos->setUserId('me');
+            $token = $this->Facebook->User()->getTokenForPageWithId($this->pageId);
+            $this->_authToken = $token;
+            $this->Facebook->Photos()->setToken($token);
         }
-        $caption = $description.$this->_desc_suffix.' '.$tags;
-        $response = $this->Facebook->Photos->publishFromUrl($url, $caption);
+        $caption = $title.' - '.$description.$this->_desc_suffix.' '.$tags;
+//        $response = $this->Facebook->Photos->publishFromUrl($url, $caption);
+        $response = $this->Facebook->Photos()->publishFromUrl($url, $caption);
+        //exit;
         return $this->wrapUp($response);
     }
     

@@ -51,13 +51,13 @@
 defined('_JEXEC') or die('Restricted access'); 
 
 class StileroSPFBFacebook{
-    public $Comments;
-    public $Feed;
-    public $Likes;
-    public $Photos;
-    public $User;
+    protected $Comments;
+    protected $Feed;
+    protected $Likes;
+    protected $Photos;
+    protected $User;
     protected $App;
-    public $AccessToken;
+    protected $AccessToken;
     protected $redirectUri;
     protected $userId = 'me';   
     
@@ -66,10 +66,17 @@ class StileroSPFBFacebook{
      * @param string $appId The Facebook App ID received from developers.facebook.com
      * @param string $appSecret The Facebook App Secret received from developers.facebook.com
      * @param string $redirectUri The redirect url is typically the absolute url to the page where this script is run (http://www.mypage.com/index.php)
+     * @param string $access_token Access token
      */
-    public function __construct($appId, $appSecret, $redirectUri) {
+    public function __construct($appId, $appSecret, $redirectUri, $access_token=null) {
         $this->App = new StileroSPFBOauthApp($appId, $appSecret);
         $this->redirectUri = $redirectUri;
+        if(isset($access_token)){
+            $AccessToken = new StileroSPFBOauthAccesstoken($this->App);
+            $AccessToken->setToken($access_token);
+            $this->AccessToken = $AccessToken;
+        }
+        $this->init();
     }
     
     /**
@@ -151,5 +158,71 @@ class StileroSPFBFacebook{
      */
     public function getToken(){
         return $this->AccessToken->token;
+    }
+    
+    /**
+     * ENDPOINT WRAPPERS
+     */
+    /**
+     * Returns a Feed object for easy access
+     * @return \StileroFBEndpointFeed
+     */
+    public function Feed(){
+        if(isset($this->Feed)){
+            return $this->Feed;
+}
+        $Feed = new StileroSPFBEndpointFeed($this->AccessToken);
+        $this->Feed = $Feed;
+        return $Feed;
+    }
+    /**
+     * Returns a User object for easy access
+     * @return \StileroFBEndpointUser
+     */
+    public function User(){
+        if(isset($this->User)){
+            return $this->User;
+        }
+        $User = new StileroSPFBOauthAccesstokenUser($this->AccessToken);
+        $this->User = $User;
+        return $User;
+    }
+    /**
+     * Returns a photos endpoint for easy access
+     * @return \StileroFBEndpointPhotos
+     */
+    public function Photos(){
+        if(isset($this->Photos)){
+            return $this->Photos;
+        }
+        $Photos = new StileroSPFBOauthAccesstokenPhotos($this->AccessToken);
+        $this->Photos = $Photos;
+        return $Photos;
+    }
+    /**
+     * Returns a Comments endpoint
+     * @param integer $postid Facebook post id
+     * @return \StileroFBEndpointComments
+     */
+    public function Comments($postid){
+        if(isset($this->Comments)){
+            return $this->Comments;
+        }
+        $Comments = new StileroSPFBOauthAccesstokenComments($this->AccessToken, $postid);
+        $this->Comments = $Comments;
+        return $Comments;
+    }
+    /**
+     * Returns a Likes endpoint
+     * @param integer $postid Facebook Post id
+     * @return \StileroFBEndpointLikes
+     */
+    public function Likes($postid){
+        if(isset($this->Likes)){
+            return $this->Likes;
+        }
+        $Likes = new StileroSPFBOauthAccesstokenLikes($this->AccessToken, $postid);
+        $this->Likes = $Likes;
+        return $Likes;
     }
 }
