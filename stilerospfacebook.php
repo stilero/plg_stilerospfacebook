@@ -15,12 +15,12 @@ if(!defined('DS')){
     define('DS', DIRECTORY_SEPARATOR);
 }
 
-define('PATH_LIBRARY', dirname(__FILE__).DS.'library'.DS);
-JLoader::discover('StileroSPFB', PATH_LIBRARY, false, true);
-JLoader::discover('StileroSPFB', PATH_LIBRARY, false, true);
-JLoader::discover('StileroSPFBOauth', PATH_LIBRARY.'fblibrary'.DS.'fboauth'.DS);
-JLoader::discover('StileroSPFBOauth', PATH_LIBRARY.'fblibrary'.DS.'oauth'.DS);
-JLoader::discover('StileroSPFBEndpoint', PATH_LIBRARY, false, true);
+define('PATH_FACEBOOK_LIBRARY', dirname(__FILE__).DS.'library'.DS);
+JLoader::discover('StileroSPFB', PATH_FACEBOOK_LIBRARY, false, true);
+JLoader::discover('StileroSPFB', PATH_FACEBOOK_LIBRARY, false, true);
+JLoader::discover('StileroSPFBOauth', PATH_FACEBOOK_LIBRARY.'fblibrary'.DS.'fboauth'.DS);
+JLoader::discover('StileroSPFBOauth', PATH_FACEBOOK_LIBRARY.'fblibrary'.DS.'oauth'.DS);
+JLoader::discover('StileroSPFBEndpoint', PATH_FACEBOOK_LIBRARY, false, true);
 //JLoader::discover('StileroSPFBEndpoint', PATH_LIBRARY.'fblibrary'.DS.'endpoint'.DS, true);
 //JLoader::discover('StileroSPFBOauth', PATH_LIBRARY.'fboauth', true, true);
 JLoader::register('SocialpromoterImporter', JPATH_ADMINISTRATOR.DS.'components'.DS.'com_socialpromoter'.DS.'helpers'.DS.'importer.php');
