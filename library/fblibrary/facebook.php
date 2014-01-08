@@ -183,7 +183,7 @@ class StileroSPFBFacebook{
         if(isset($this->User)){
             return $this->User;
         }
-        $User = new StileroSPFBOauthAccesstokenUser($this->AccessToken);
+        $User = new StileroSPFBEndpointUser($this->AccessToken);
         $this->User = $User;
         return $User;
     }
@@ -195,7 +195,7 @@ class StileroSPFBFacebook{
         if(isset($this->Photos)){
             return $this->Photos;
         }
-        $Photos = new StileroSPFBOauthAccesstokenPhotos($this->AccessToken);
+        $Photos = new StileroSPFBEndpointPhotos($this->AccessToken);
         $this->Photos = $Photos;
         return $Photos;
     }
@@ -208,7 +208,7 @@ class StileroSPFBFacebook{
         if(isset($this->Comments)){
             return $this->Comments;
         }
-        $Comments = new StileroSPFBOauthAccesstokenComments($this->AccessToken, $postid);
+        $Comments = new StileroSPFBEndpointComments($this->AccessToken, $postid);
         $this->Comments = $Comments;
         return $Comments;
     }
@@ -221,7 +221,7 @@ class StileroSPFBFacebook{
         if(isset($this->Likes)){
             return $this->Likes;
         }
-        $Likes = new StileroSPFBOauthAccesstokenLikes($this->AccessToken, $postid);
+        $Likes = new StileroSPFBEndpointLikes($this->AccessToken, $postid);
         $this->Likes = $Likes;
         return $Likes;
     }
