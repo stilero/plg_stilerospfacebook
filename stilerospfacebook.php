@@ -137,29 +137,16 @@ class plgSocialpromoterStilerospfacebook extends JPlugin {
         //exit;
         return $this->wrapUp($response);
     }
-    
     /**
-     * Checks if the main component is installed
-     * @return boolean
+     * Returns all comments for a photo
+     * @param string $photo_id
+     * @return string RAW JSON Response
      */
-    protected function canRun(){
-        return SocialpromoterHelper::canRun();
-    }
-    
-    /**
-     * Returns an array with supported post types
-     * @return array Array with the supported post types
-     */
-    public function getSupportedMethods(){
-        return $this->supportedPosttypes;
-    }
-    
-    /**
-     * Checks if the post type is supported
-     * @param string $type Type of post (link,image) from Socialpromoter::image;
-     */
-    public function canPost($type){
-        return in_array($type, $this->supportedPosttypes);
+    public function getComments($photo_id){
+        $redirectUri = JURI::root();
+        $this->Facebook = new StileroSPFBFacebook($this->_appId, $this->_appSecret, $redirectUri, $this->_authToken);
+        $response = $this->Facebook->Comments($photo_id)->read();
+        return StileroSPFBOauthResponse::handle($response);
     }
     
 } //End Class
